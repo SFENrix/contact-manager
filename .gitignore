@@ -1,0 +1,29 @@
+# ===== Qt build output =====
+build/
+
+# ===== Qt Creator user files =====
+*.pro.user
+*.pro.user.*
+*.user
+*.autosave
+
+# ===== qmake / CMake =====
+.qmake.stash
+CMakeLists.txt.user
+
+# ===== Object & binary files =====
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.app
+
+# ===== Qt generated files =====
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+
+# ===== OS junk =====
+.DS_Store
+Thumbs.db
