@@ -239,12 +239,11 @@ void MainWindow::onDeleteContactClicked()
 
 void MainWindow::onRefreshClicked()
 {
-    QString host = ui->lineEdit_host->text();
-    QString database = ui->lineEdit_database->text();
-    QString user = ui->lineEdit_user->text();
-    QString password = ui->lineEdit_password->text();
-    m_dbManager->disconnectFromDatabase();
-    m_dbManager->connectToDatabase(host, database, user, password);   // or whatever method you use
+    if (!m_dbManager->isConnected()) {
+        showStatusMessage("Not connected to database");
+        return;
+    }
+
     loadContacts();
     showStatusMessage("Contact list refreshed");
 }
